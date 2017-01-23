@@ -1,0 +1,17 @@
+.vertical-center {
+	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+	min-height: 100vh; /* These two lines are counted as one :-)       */
+	min-width: 100%;  /* Fallback for browsers do NOT support vh unit */
+	min-width: 100hw; /* These two lines are counted as one :-)       */
+
+	display: flex;
+	align-items: center;
+}
+.board {
+	margin-top:5em;
+}
+.tictactoe-button {
+	font-size: 3em;
+	width: 6em;
+	height: 6em;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="ticTacToe" lang="en" ng-cloak>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<title>Tic Tac Toe</title>
+
+		<!-- jQuery -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="//cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+
+		<!-- CLEditor -->
+		<link rel="stylesheet" type="text/css" href="application/add/CLEditor1_3_0/jquery.cleditor.css" />
+		<script type='text/javascript' src='application/add/CLEditor1_3_0/jquery.cleditor.min.js'></script>
+
+		<!-- Flot Charts -->
+		<script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"></script>
+		<script language="javascript" type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.pie.min.js"></script>
+
+		<!-- Angular -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-sanitize.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-touch.js"></script>
+
+		<!-- RequireJS -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+
+		<!-- Bootstrap -->
+		<link href="application/add/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="application/add/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<script src="application/add/bootstrap/js/bootstrap.min.js"></script>
+
+		<link href="application/style/style.css" rel="stylesheet">
+		<link href="application/style/resp.css" rel="stylesheet">
+		<link href="application/style/themes.css" rel="stylesheet">
+		<!--<link href="application/style/examples.css" rel="stylesheet">-->
+
+		<link rel="stylesheet" href="application/add/jquery-ui-1.10.2.custom/css/smoothness/jquery-ui-1.10.2.custom.min.css">
+		<link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Balthazar' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- Secret Sauce -->
+		<script src="js/tictactoe.js?v=0.0.2"></script>
+		<link href="css/tictactoe.css?v=0.0.2" rel="stylesheet" />
+	</head>
+	<body ng-controller="TicTacToe">
+		<div id="gameFinished" class="modal hide shutdown" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="gameFinishedLabel">{{has_won}}</h3>
+			</div>
+			<div class="modal-body">
+				<p>Do you want to play again?</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-inverse" data-dismiss="modal" style="display:none"></button>
+				<button id="delModal_cancel" class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+				<button id="delModal_ok" class="btn btn-inverse" data-dismiss="modal">Yes</button>
+			</div>
+		</div>
+		<table class="board center">
+			<tr>
+				<td> <button class="tictactoe-button top_left" ng-click="buttonPress($event)">{{top_left}}</button></td>
+				<td> <button class="tictactoe-button top_middle" ng-click="buttonPress($event)">{{top_middle}}</button></td>
+				<td> <button class="tictactoe-button top_right" ng-click="buttonPress($event)">{{top_right}}</button></td>
+			</tr>
+			<tr>
+				<td> <button class="tictactoe-button middle_left" ng-click="buttonPress($event)">{{middle_left}}</button></td>
+				<td> <button class="tictactoe-button middle_middle" ng-click="buttonPress($event)">{{middle_middle}}</button></td>
+				<td> <button class="tictactoe-button middle_right" ng-click="buttonPress($event)">{{middle_right}}</button></td>
+			</tr>
+			<tr>
+				<td> <button class="tictactoe-button bottom_left" ng-click="buttonPress($event)">{{bottom_left}}</button></td>
+				<td> <button class="tictactoe-button bottom_middle" ng-click="buttonPress($event)">{{bottom_middle}}</button></td>
+				<td> <button class="tictactoe-button bottom_right" ng-click="buttonPress($event)">{{bottom_right}}</button></td>
+			</tr>
+		</table>
+	</body>
+</html>
