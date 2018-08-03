@@ -1,6 +1,6 @@
 var ticTacToe = angular.module('ticTacToe', ['ngSanitize','ngRoute']);
 ticTacToe.controller('TicTacToe', 
-function FoodServiceRebatesController($scope, $location) {
+function ticTacToe($scope, $location) {
 	$scope.has_won = '';
 
 	$scope.buttonPress = function buttonPress(quadrant) {
